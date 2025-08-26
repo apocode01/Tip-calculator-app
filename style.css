@@ -134,9 +134,10 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.buttons button.active {
+.buttons button.active, #tipInput.active {
     background-color: var(--green400);
     color: var(--green900);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .selections input:focus {
