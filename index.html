@@ -10,28 +10,36 @@
 <body>
 
   <main>
+    <img class="logo" src="images/logo.svg" alt="SPLITTER">
     <div class="container">
       <div class="selections">
         <div class="bill">
-          <p>Bill</p>
-          <input type="number" min="0" value="0">
+          <p class="title">Bill</p>
+          <div class="billInputDiv">
+            <img class="dollarIcon" src="images/icon-dollar.svg" alt="">
+            <input id="billInput" type="number" min="0" placeholder="0">
+          </div>
         </div>
 
         <div class="tip">
-          <p>Select Tip %</p>
+          <p class="title">Select Tip %</p>
           <div class="buttons">
-            <button>5%</button>
-            <button>10%</button>
-            <button>15%</button>
-            <button>25%</button>
-            <button>50%</button>
+            <button class="fixedTipButton">5%</button>
+            <button class="fixedTipButton">10%</button>
+            <button class="fixedTipButton">15%</button>
+            <button class="fixedTipButton">25%</button>
+            <button class="fixedTipButton">50%</button>
             <button id="custom">Custom</button>
+            <input id="tipInput" type="number" min="0" style="display: none;">
           </div>
         </div>
 
         <div class="people">
-          <p>Number of People</p>
-          <input type="number" min="0" value="0">
+          <p class="title">Number of People</p>
+          <div class="peopleInputDiv">
+            <img class="personIcon" src="images/icon-person.svg" alt="">
+            <input id="personInput" type="number" min="0" placeholder="0">
+          </div>
         </div>
       </div>
 
@@ -52,7 +60,7 @@
           <p>$0.00</p>
         </div>
 
-        <button id="reset">Reset</button>
+        <button id="reset">RESET</button>
       </div>
     </div>
   </main>
