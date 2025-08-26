@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+    --green400: hsl(172, 67%, 45%);
+    --green900: hsl(183, 100%, 15%);
+    --green700: hsl(183, 80%, 24%);
+    --green900Hover: hsl(183, 100%, 12%);
+    --grey500: hsl(186, 14%, 43%);
+    --grey400: hsl(184, 14%, 56%);
+    --grey200: hsl(185, 41%, 84%);
+    --grey50: hsl(189, 47%, 97%);
+    --white: hsl(0, 100%, 100%);
+    --blackSqueeze: hsl(202, 50%, 92%);
+    --blackSqueezeHover: hsl(202, 50%, 87%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--grey200);
+    font-family: 'Space Mono', sans-serif;
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center; 
+    background-color: var(--white);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+    width: 50vw;
+}
+
+.selections {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch; 
+    gap: 2rem;
+    width: 50%;
+}
+
+.selections input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 24px; /* PLACEHOLDER */
+    font-family: 'Space Mono', sans-serif;
+    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--blackSqueeze);
+    text-align: end;
+}
+
+.selections input:focus {
+    outline: 2px solid var(--green400);
+}
+
+.bill, .tip, .people {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.buttons button {
+    padding: 0.2rem;
+    font-size: 24px; /* PLACEHOLDER */
+    font-family: 'Space Mono', sans-serif;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--green900);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: var(--green900Hover);
+    transition: background-color 0.3s ease;
+}
+
+.selections input:focus {
+    outline: 2px solid var(--green400);
+}
+
+#custom {
+    background-color: var(--blackSqueeze);
+    color: var(--grey500);
+}
+
+#custom:hover {
+    background-color: var(--blackSqueezeHover);
+    transition: background-color 0.3s ease;
+}
+
+.results {
+    display: flex; 
+    flex-direction: column;
+    background-color: var(--green900);
+    border-radius: 1rem;
+    padding: 2rem;
+    min-height: 100%;
+    width: 50%;
+    gap: 2rem;
+}
+
+.results ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+}
+
+.results ul li:first-child {
+    color: var(--white);
+}
+
+.results ul li:last-child {
+    color: var(--green400);
+}
+
+.results p {
+    font-size: 45px;
+    color: var(--green400);
+}
+
+.tipResult, .totalResult {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#reset {
+    width: 100%;
+    margin-top: auto;
+    padding: 0.2rem;
+    font-size: 24px; /* PLACEHOLDER */
+    font-family: 'Space Mono', sans-serif;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--green700);
+    color: var(--green900);
+    cursor: default;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: var(--green900); 
+}
+
+/* Hide Arrows From Input Number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
