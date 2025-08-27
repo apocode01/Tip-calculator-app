@@ -11,6 +11,7 @@
     --white: hsl(0, 100%, 100%);
     --blackSqueeze: hsl(202, 50%, 92%);
     --blackSqueezeHover: hsl(202, 50%, 85%);
+    --red: hsl(4, 100%, 67%);
 }
 
 * {
@@ -60,8 +61,18 @@ body {
     width: 50%;
 }
 
+.titleDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
 .title {
     color: var(--grey500);
+    font-size: clamp(0.9rem, 0.101vw + 0.88rem, 1rem);
+}
+
+.warning {
+    color: var(--red);
     font-size: clamp(0.9rem, 0.101vw + 0.88rem, 1rem);
 }
 
@@ -75,6 +86,10 @@ body {
     background-color: var(--blackSqueeze);
     color: var(--green900);
     text-align: end;
+}
+
+#billInput.invalid, #peopleInput.invalid {
+    outline: 2px solid var(--red);
 }
 
 .selections input:focus {
@@ -129,7 +144,7 @@ body {
 }
 
 .buttons button:hover {
-    background-color: var(--blackSqueeze);
+    background-color: var(--grey200);;
     color: var(--green900);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -214,7 +229,7 @@ body {
 #reset {
     width: 100%;
     margin-top: auto;
-    padding: 0.2rem;
+    padding: 0.4rem 0.2rem;
     font-size: clamp(1.35rem, 0.151vw + 1.32rem, 1.5rem);
     font-family: 'Space Mono', sans-serif;
     border-radius: 0.3rem;
@@ -222,6 +237,18 @@ body {
     background-color: var(--green700);
     color: var(--green900);
     cursor: default;
+    pointer-events: none;
+}
+
+#reset.on {
+    background-color: var(--green400);
+    cursor: pointer;
+    pointer-events: all;
+}
+
+#reset.on:hover {
+    background-color: var(--grey200);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .attribution { 

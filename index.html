@@ -14,7 +14,10 @@
     <div class="container">
       <div class="selections">
         <div class="bill">
-          <p class="title">Bill</p>
+          <div class="titleDiv">
+              <p class="title">Bill</p>
+              <p class="warning" id="warningMessageBill"></p>
+          </div>
           <div class="billInputDiv">
             <img class="dollarIcon" src="images/icon-dollar.svg" alt="">
             <input id="billInput" type="number" min="0" placeholder="0">
@@ -35,7 +38,10 @@
         </div>
 
         <div class="people">
-          <p class="title">Number of People</p>
+          <div class="titleDiv">
+              <p class="title">Number of People</p>
+              <p class="warning" id="warningMessagePeople"></p>
+          </div>
           <div class="peopleInputDiv">
             <img class="personIcon" src="images/icon-person.svg" alt="">
             <input id="peopleInput" type="number" min="0" placeholder="0">
