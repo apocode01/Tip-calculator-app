@@ -65,7 +65,7 @@ body {
     font-size: clamp(0.9rem, 0.101vw + 0.88rem, 1rem);
 }
 
-#billInput, #personInput {
+#billInput, #peopleInput {
     width: 100%;
     font-size: clamp(1.35rem, 0.151vw + 1.32rem, 1.5rem);
     font-family: 'Space Mono', sans-serif;
