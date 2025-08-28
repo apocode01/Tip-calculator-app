@@ -17,8 +17,8 @@ let curButton = -1;
 
 // Functions
 
-function calculateTip(buttonIndex) {
-    if (curButton != -1) {
+function calculateTip() {
+    if (curButton !== -1) {
         const percentages = [5, 10, 15, 25, 50];
         totalTip = bill * (percentages[curButton] / 100);  
     }
