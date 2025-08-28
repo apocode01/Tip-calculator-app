@@ -13,17 +13,23 @@ let bill = 0;
 let people = 1;
 let validBill = false;
 let validPeople = false;
+let curButton = -1;
 
 // Functions
 
 function calculateTip(buttonIndex) {
-    const percentages = [5, 10, 15, 25, 50];
-    totalTip = bill * (percentages[buttonIndex] / 100);
-}
-
-function calculateCustomTip() {
-    const tipPercentage = Number(tipInput.value);
-    totalTip = bill * (tipPercentage/100);
+    if (curButton != -1) {
+        const percentages = [5, 10, 15, 25, 50];
+        totalTip = bill * (percentages[curButton] / 100);  
+    }
+    else {
+        let tipPercentage = Number(tipInput.value);
+        if (tipPercentage < 0) {
+            tipPercentage = 0;
+            tipInput.value = 0;
+        }
+        totalTip = bill * (tipPercentage/100); 
+    }
 }
 
 function showResults() {
@@ -115,7 +121,8 @@ customTipButton.addEventListener('click', () => {
 });
 
 tipInput.addEventListener("focus", () => {
-    calculateCustomTip();
+    curButton = -1;
+    calculateTip();
     showResults();
     buttons.forEach(b => b.classList.remove(`active`));
     tipInput.classList.remove(`active`)
@@ -127,13 +134,14 @@ tipInput.addEventListener("blur", () => {
         tipInput.style.display = "none";
     }
     else {
-        tipInput.classList.add(`active`)
+        tipInput.classList.add(`active`);
     }
 });
 
 buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
-        calculateTip(index); 
+        curButton = index;
+        calculateTip(); 
         showResults();
         // Remove custom tip
         customTipButton.style.display = "inline-block";
@@ -147,16 +155,19 @@ buttons.forEach((button, index) => {
 
 billInput.addEventListener('input', () => {
     updateAndCheckBillValue();
+    calculateTip(); 
     showResults();
 });
 
 peopleInput.addEventListener('input', () => {
     updateAndCheckPeopleValue();
+    calculateTip(); 
     showResults();
 });
 
 tipInput.addEventListener('input', () => {
-    calculateCustomTip();
+    curButton = -1;
+    calculateTip();
     showResults();
 });
 
